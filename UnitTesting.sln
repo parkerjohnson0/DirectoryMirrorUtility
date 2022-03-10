@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTesting", "UnitTesting\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectoryWatcher", "DirectoryWatcher\DirectoryWatcher.csproj", "{11BB4CBD-976D-4DCA-B0C6-A8A5B8161FB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "GUI\GUI.csproj", "{77F10363-C8BB-4C3E-B8A1-1CFA3E987191}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GUI", "GUI\GUI.csproj", "{C968F58E-BB99-4E43-8351-CF6398E2321D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{11BB4CBD-976D-4DCA-B0C6-A8A5B8161FB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11BB4CBD-976D-4DCA-B0C6-A8A5B8161FB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11BB4CBD-976D-4DCA-B0C6-A8A5B8161FB0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{77F10363-C8BB-4C3E-B8A1-1CFA3E987191}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{77F10363-C8BB-4C3E-B8A1-1CFA3E987191}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{77F10363-C8BB-4C3E-B8A1-1CFA3E987191}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{77F10363-C8BB-4C3E-B8A1-1CFA3E987191}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C968F58E-BB99-4E43-8351-CF6398E2321D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C968F58E-BB99-4E43-8351-CF6398E2321D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C968F58E-BB99-4E43-8351-CF6398E2321D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C968F58E-BB99-4E43-8351-CF6398E2321D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

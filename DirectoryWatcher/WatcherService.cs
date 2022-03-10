@@ -16,14 +16,13 @@ namespace DirectoryWatcher
         //private List<string> folderPaths;
         private List<Folder> Folders = new List<Folder>();
         private readonly FolderPathsOptions _options;
-        private List<FileSystemWatcher> watchers;
         //private readonly IConfiguration Configuration;
         public WatcherService(IOptions<FolderPathsOptions> options, ILogger<WatcherService> logger)
         {
             _logger = logger;
             _options = options.Value;
             Folders = GetFoldersFromConfig();
-            watchers = WatcherFactory.CreateWatchers(Folders);
+            WatcherFactory.CreateAndAssignWatchers(Folders);
         }
 
         private List<Folder> GetFoldersFromConfig()
@@ -41,7 +40,14 @@ namespace DirectoryWatcher
 
         public void Run()
         {
-
+            foreach (Folder folder in Folders)
+            {
+                if (folder.ChangesMade)
+                {
+                    _logger.LogInformation("Change made to folder: " + folder.Path);
+                    folder.HandleChange();
+                }
+            }
         }
     }
 }
