@@ -1,4 +1,5 @@
 ﻿using DirectoryWatcher;
+using GUI.View;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -11,7 +12,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace WpfApp2
+namespace GUI
 {
     /// <summary>
     /// Interaction logic for App.xaml
