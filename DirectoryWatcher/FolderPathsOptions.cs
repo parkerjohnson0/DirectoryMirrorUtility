@@ -9,6 +9,11 @@ namespace DirectoryWatcher
     public class FolderPathsOptions
     {
         public const string FolderPaths = "FolderPaths";
-        public List<string> Paths { get; set; }
+        public List<FolderPath> Paths { get; set; }
+    }
+    public class FolderPath
+    {
+        public string Directory { get; set; }
+        public string Output { get; set; }
     }
 }

@@ -11,6 +11,7 @@ namespace DirectoryWatcher
     {
         public bool ChangesMade { get; set; }
         public string Path { get; set; }
+        public string Output { get; set; }
         public FileSystemWatcher FileWatcher { get; set; }
 
         internal void HandleChange()

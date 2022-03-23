@@ -29,10 +29,10 @@ namespace GUI.View
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.WindowState = WindowState.Minimized;
-            this.icon.Icon = new Icon("assets/icon.ico");
-            //this.icon.ShowBalloonTip(5000, "YO","Title", ToolTipIcon.Info);
-            this.icon.Visible = true;
+            //this.WindowState = WindowState.Minimized;
+            //this.icon.Icon = new Icon("assets/icon.ico");
+            ////this.icon.ShowBalloonTip(5000, "YO","Title", ToolTipIcon.Info);
+            //this.icon.Visible = true;
 
         }
     }

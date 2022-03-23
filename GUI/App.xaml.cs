@@ -1,5 +1,7 @@
 ﻿using DirectoryWatcher;
+using GUI.Model;
 using GUI.View;
+using GUI.ViewModel;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -20,12 +22,14 @@ namespace GUI
     public partial class App : Application
     {
         private IHost _host;
+        public static IServiceProvider ServiceProvider { get; set; }
         public App()
         {
             _host = new HostBuilder()
                 .ConfigureAppConfiguration((context, configurationBuilder) =>
                 {
                     configurationBuilder.AddJsonFile("appsettings.json", optional: false);
+                    configurationBuilder.Build();
                 })
                 .ConfigureServices((hostContext, services)=>
                 {
@@ -35,12 +39,14 @@ namespace GUI
                     services.AddHostedService<WindowsBackgroundService>();
                     services.AddSingleton<WatcherService>();
                     services.AddSingleton<MainWindow>();
+                    services.AddSingleton<MainViewModel>();
                 })
                 .ConfigureLogging(logging =>
                 {
                     logging.AddDebug();
                 })
                 .Build();
+            ServiceProvider = _host.Services;
         }
         private async void Application_Startup(object sender, StartupEventArgs e)
         {

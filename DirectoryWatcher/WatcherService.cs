@@ -14,7 +14,7 @@ namespace DirectoryWatcher
     {
         private readonly ILogger<WatcherService> _logger;
         //private List<string> folderPaths;
-        private List<Folder> Folders = new List<Folder>();
+        public List<Folder> Folders = new List<Folder>();
         private readonly FolderPathsOptions _options;
         //private readonly IConfiguration Configuration;
         public WatcherService(IOptions<FolderPathsOptions> options, ILogger<WatcherService> logger)
@@ -28,11 +28,12 @@ namespace DirectoryWatcher
         private List<Folder> GetFoldersFromConfig()
         {
             List<Folder> list = new List<Folder>();
-            foreach (var item in _options.Paths)
+            foreach (FolderPath item in _options.Paths)
             {
                 list.Add(new Folder()
                 {
-                    Path = item
+                    Path = item.Directory,
+                    Output = item.Output
                 });
             }
             return list;

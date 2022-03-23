@@ -9,15 +9,14 @@
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         mc:Ignorable="d"
         ResizeMode="CanMinimize"
-        Title="Directory Mirror" Height="450" Width="600"
+        Title="Directory Mirror" Height="600" Width="1000"
+        DataContext="{Binding Source={StaticResource Locator}, Path=MainViewModel}"
         >
-    <Window.DataContext>
-        <vm:MainViewModel/>
-    </Window.DataContext>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="5*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -26,6 +25,11 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <DataGrid 
+            IsReadOnly="True"
+            CanUserAddRows="False"
+            CanUserDeleteRows="False"
+            AutoGenerateColumns="False"
+            ItemsSource="{Binding MirrorListItems}"
             Grid.Row="1"
             Grid.Column="1">
             <DataGrid.Style>
@@ -35,8 +39,14 @@
                 </Style>
             </DataGrid.Style>
             <DataGrid.Columns>
-                    <DataGridTextColumn Header="Directory" Width="*"/>
-                    <DataGridTextColumn Header="Output" Width="*"/>
+                    <DataGridTextColumn 
+                        Binding="{Binding Directory}"
+                        Header="Directory" 
+                        Width="*"/>
+                    <DataGridTextColumn
+                        Binding="{Binding Output}"
+                        Header="Output" 
+                        Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
         <Button
@@ -48,7 +58,7 @@
             Width="40"
             Height="40"
             Margin="0,5,55,30"
-            Click="Button_Click"
+            Command="{Binding OpenFileDialogCommand}"
             Background="DodgerBlue">
             <TextBlock FontWeight="Bold" FontFamily="{DynamicResource MaterialDesignFont}">
                 +
